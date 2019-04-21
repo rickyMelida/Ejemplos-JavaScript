@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Funciones Pre</title>
+</head>
+<body>
+    <h1>Titulo</h1>
+    <p id="texto"></p>
+    <button onclick="miFuncion()">Resultado</button>
+    <script>
+        var texto = document.getElementById("texto");
+
+        var miTexto = "Pinte mi casa de amarillo";
+        var primerTexto = "Pinté mi casa";
+        var segundoTexto = primerTexto.concat( " de amarillo");
+
+        function miFuncion() {
+            var longitud = miTexto.length;
+             texto.innerHTML = segundoTexto;
+        }
+        
+    </script>
+</body>
+</html>
