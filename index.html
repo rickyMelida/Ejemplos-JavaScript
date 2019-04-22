@@ -77,6 +77,77 @@
             var letra1 = saludo1.split("");//Sin incluir espacio entre los parentesis
             texto.innerHTML = letra1[0];
 
+
+            var colores_primarios = ["rojo", "azul", "amarillo"];
+
+
+            /*Devuelve el numero de elementos que contiene un array*/
+            var numerosColores = colores_primarios.length;
+
+            var semana1 = ["Lunes", "Martes", "Miercoles"];
+
+            /*Concatenamos el primer array con los elementos introducidos dentro de los parentesis*/
+            var semana2 = semana1.concat("Jueves", "Viernes");
+
+
+            var semana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+
+            /*Devuelve el ultimo elemento del array semana, El array original modifica su longitud 
+            disminuyendo en un elemento.*/
+            var festivo = semana.pop();
+
+
+            var asignaturas = ["Idioma", "Matematicas", "Fisica"];
+
+            /*Agregamos el elemento Literatura al array asignaturas*/
+            asignaturas.push("Literatura");
+
+
+            var numeros = [1, 2, 3];
+
+            /*devuelve el primer elemento del array. El array original queda modificado y su longitud
+             disminuye en un elemento*/
+            var primero = numeros.shift();
+
+            /*Añade un elemento al comienzo de un array. El array original se modifica y aumentará 
+            su longitud en un elemento.*/
+            numeros.unshift(0);
+
+            var array = [1, 2, 3];
+
+            /*Devuelve el array con todos sus elementos colocados en el orden inverso a su posición original:*/
+            var reves = array.reverse();
+
+
+            /*NaN, viene del inglés, Not a Number, indica un valor numérico no definido (por ejemplo, la división 0/0).*/
+
+            var numero1 = 0;
+            var numero2 = 0;
+            alert(numero1/numero2); // se muestra el valor NaN
+            
+
+            /*IsNaN(): Devuelve si la expresión es o no un número. Permite proteger a la aplicación 
+            de posibles valores numéricos no definidos.*/
+
+
+            if(isNaN(numero1/numero2)) {
+                alert("La división no está definida para los números indicados");
+            }
+            else {
+                alert("La división es igual a =>" + numero1/numero2);
+            }
+
+
+
+            /*toFixed(digitos): devuelve el número con tantos decimales como los que indiquemos en el 
+            parámetro digitos y realiza los redondeos necesarios.*/
+            var numero_largo = 4564.34567;
+            numero_largo.toFixed(2); // 4564.35
+            numero_largo.toFixed(6); // 4564.345670
+            
+
+            texto_1.innerHTML = "El dia festivo es " + numero_largo.toFixed(); // 4564;
+
         }
         
     </script>
