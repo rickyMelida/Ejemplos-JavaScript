@@ -9,17 +9,74 @@
 <body>
     <h1>Titulo</h1>
     <p id="texto"></p>
+    <p id="texto_1"></p>
+
     <button onclick="miFuncion()">Resultado</button>
     <script>
         var texto = document.getElementById("texto");
 
-        var miTexto = "Pinte mi casa de amarillo";
-        var primerTexto = "Pinté mi casa";
-        var segundoTexto = primerTexto.concat( " de amarillo");
+        var texto_1 = document.getElementById("texto_1");
 
         function miFuncion() {
+
+            var miTexto = "Pinte mi casa de amarillo";
+
+            var primerTexto = "Pinté mi casa";
+            var segundoTexto = primerTexto.concat( " de amarillo");
+
+            var miTexto = "CaSa de DOS pueRTAS";
+
+            /*Convertimos todas las letras en mayusculas*/
+            var textoMayusculas = miTexto.toUpperCase();
+
+            /*Convertimos todas las letras en minusculas*/
+            var textoMinusculas = miTexto.toLowerCase();
+
+            /*Sabemos la longitud del texto*/
             var longitud = miTexto.length;
-             texto.innerHTML = segundoTexto;
+
+
+            var saludo = "Muy buenos días";
+
+            /*Devuelve la letra que esta en la posicion n de la variable saludo*/
+            var letra = saludo.charAt(5); 
+
+            /*Devuelve la posicion en la que se encuentra la letra indicada entre los parentesis*/
+            /*Si el carácter indicado no se encuentra en ninguna posición, la función devuelve el valor -1:*/
+            var posicion = saludo.indexOf("x"); 
+
+            /*Calcula la última posición en la que se encuentra el carácter indicado entre los 
+            paréntesis. Si la cadena no contiene el carácter, la función devuelve el valor -1:*/
+            /*Esta función es similar a la anterior y devuelve el mismo resultado, pero comienza 
+            a buscar desde el final de la cadena*/
+            var posicion_2 = saludo.lastIndexOf("a"); // posicion = 14
+
+
+
+            /*substring(inicio, final): Extrae una parte de una variable de texto, una subcadena
+             de una cadena de caracteres. La primera posición es cero. El segundo parámetro es 
+             opcional. Si sólo se indica el primer parámetro, devolverá la parte correspondiente
+              desde dicha posición hasta el final:*/
+
+              /*En el caso de que incluyamos las posiciones del inicio y el final, devolverá 
+              la parte comprendida entre la posición inicial y la inmediatamente anterior a 
+              la posición final:*/
+
+              /*Si indicáramos un inicio negativo, nos devolverá la variable completa:*/
+            var porcion = saludo.substring(4); // porcion = “buenos días”
+
+
+            /*split(separador): Devuelve un array que contendrá cadenas de texto que serán 
+            subcadenas de la variable original, separadas por el carácter separador que 
+            hayamos indicado*/
+            var palabras = saludo.split(" ");// palabras = [“Muy”, “buenos”, “días”]
+            //texto.innerHTML = palabras[0];
+
+            /*Tambien Permite extraer las letras de una palabra,*/
+            var saludo1 = "Hola";
+            var letra1 = saludo1.split("");//Sin incluir espacio entre los parentesis
+            texto.innerHTML = letra1[0];
+
         }
         
     </script>
