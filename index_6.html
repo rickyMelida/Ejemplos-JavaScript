@@ -5,6 +5,52 @@
 	<title>Objeto Imagen</title>
 </head>
 <body>
-	
+	<script>
+		/*Propiedades*/
+
+		/*
+			- Border. El ancho de los bordes de la imagen en pixels
+			
+			- complete. Un valor lógico que será cierto siempre y cuando la 
+				imagen haya sido cargada completamente.
+			
+			- height. El valor en pixels de la altura de la imagen. Sólo lectura.
+			
+			- hspace. Contiene el valor en pixels del espacio horizontal de una 
+				imagen respecto al texto que la rodea.
+			
+			- lowsrc. Es una imagen alternativa que se carga mientras se recibe la primera.
+			
+			- name. El nombre asignado a la imagen. Contiene la ruta asociada a dicha imagen.
+			
+			- src. Contiene el archivo de la imagen.
+			
+			- vspace. Contiene el valor en pixels del espacio vertical de una imagen 
+				respecto al texto que la rodea.
+			
+			- Width. El valor en pixels del ancho de la imagen
+		*/
+
+			if (document.images) {
+				var imagen_1 = new Image();
+				imagen_1.src = "imagen_1.bmp";
+
+				var imagen_2 = new Image();
+				imagen_2.src = "imagen_2.bmp";
+			}
+
+		function primera(nombreImagen){
+			if (document.images){
+				document[nombreImagen].src=imagenDos.src;}
+		}
+		function segunda(nombreImagen){
+			if (document.images){
+				document[nombreImagen].src=imagenUno.src;}
+		}
+	</script>
+
+	<a href="index_6.html" onMouseOver="primera('prueba');" onMouseOut="segunda('prueba');">
+	<img name="prueba" src="imagen_1.bmp" border=0>
+	</a>
 </body>
 </html>
