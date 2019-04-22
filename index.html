@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Funciones Pre</title>
+    <style>
+        p{
+            width: 500px;
+            height: 300px;
+            background: green;
+        }
+    </style>
 </head>
 <body>
     <h1>Titulo</h1>
     <p id="texto"></p>
     <p id="texto_1"></p>
+    <p name="pa">Ejemplo</p>
 
-    <button onclick="miFuncion()">Resultado</button>
+    <button onclick="manejoDom()">Resultado</button>
     <script>
         var texto = document.getElementById("texto");
 
@@ -147,6 +155,14 @@
             
 
             texto_1.innerHTML = "El dia festivo es " + numero_largo.toFixed(); // 4564;
+
+        }
+
+        function manejoDom() {
+            var parrafos = document.getElementsByTagName("p");
+            var unico = document.getElementsByName("pa");
+
+            unico.style.color = "gray";
 
         }
         
