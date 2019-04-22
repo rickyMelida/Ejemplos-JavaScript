@@ -14,6 +14,10 @@
 			}else {
 				alert("Rechazaste");
 			}
+
+			var opciones = "left=100, top=100, width=250, height=150";
+			var miVentana = window.open(",",opciones);
+			miVentana.document.write("Una prueba para abrir ventanas");
 		}
 
 		/*
@@ -105,7 +109,7 @@
 			- scrollTo(x,y). Desplaza la ventana a las coordenadas (x,y).
 
 			- setInterval(expresion,tiempo). Una vez transcurrido el tiempo especificado, se evalúa la expresión.
-			
+
 			- setTimeout(expresion,tiempo). Una vez transcurrido el tiempo especificado, se evalúa la expresión.
 
 		*/	
