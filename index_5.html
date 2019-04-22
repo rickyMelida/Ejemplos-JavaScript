@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Objeto Document</title>
+</head>
+<body>
+	<input type="button" value="Funcion" onclick="escribir()">
+	<script>
+		/*Propiedades del objeto document*/
+
+		/*
+			- alinkColor. Es el color de los enlaces activos.
+			
+			- anchors. Array con los enlaces del documento.
+			
+			- applets. Array con los applets del documento.
+			
+			- bgColor. Se refiere al color de fondo del documento.
+			
+			- cookie. Cadena con los valores de las cookies del documento.
+			
+			- domain. Nombre del dominio del servidor que ha servido el documento.
+			
+			- embeds. Array con todos los elementos <EMBED> del documento.
+			
+			- fgColor. Propiedad que contiene el color del texto.
+			
+			- forms. Array con todos los formularios del documento. Éstos a su vez tienen sus elementos que ya veremos en su momento.
+			
+			- images. Array que contiene las imágenes del documento.
+			
+			- lastModified. Contiene la fecha de la última modificación del documento.
+			
+			- linkColor. Almacena el color de los enlaces.
+			
+			- links. Array con los enlaces externos.
+			
+			- location. Cadena que contiene la URL del documento.
+			
+			- referrer. Cadena con la URL del documento que llamó al actual. Es el enlace a través del cual accedió el usuario.
+			
+			- title. Cadena que contiene el titulo del documento actual
+			
+			- vlinkColor. Color de los enlaces que ya han sido visitados.
+		*/	
+			
+			/* Métodos*/
+		
+		/*
+			- clear(). Limpiar ventana del documento.
+			
+			- open(). Abrir escritura sobre un documento.
+			
+			- close(). Cerrar escritura sobre el documento actual.
+			
+			- write(). Escribir texto en el documento.
+			
+			- writeln(). Escribe texto en el documento añadiendo un salto de línea al final.
+		*/
+
+		function escribir() {
+			document.write("Este documento se modifico por ultima vez en el dia: ");
+			document.write(document.lastModified);
+		}
+	</script>	
+</body>
+</html>
