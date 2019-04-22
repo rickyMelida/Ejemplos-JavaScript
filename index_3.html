@@ -4,6 +4,111 @@
 	<title>El objeto window</title>
 </head>
 <body>
-	
+	<button onclick="mensaje()">Presioname</button>
+	<script>
+		function mensaje() {
+			var res = confirm("Te muestro");
+
+			if (res == true) {
+				alert("Aceptaste");
+			}else {
+				alert("Rechazaste");
+			}
+		}
+
+		/*
+		PROPIEDADES DEL OBJETO WINDOW
+			-closed. Nos dice si la ventana está cerrada, en cuyo caso su valor será true, o abierta, false.
+
+			- defaultStatus. Es el texto que aparece en la barra de estado del navegador. Es una cadena.
+
+			- frames. Contiene en un array cada uno de los frames de la ventana. Estarán en el mismo orden 
+			en el que se definan en el documento, siendo el primero el de índice número 0.
+
+			- history. Array que guarda las páginas que hemos visitado, se almacena un historial con ellas.
+
+			- length. Guarda el número de frames que contiene la página actual.
+
+			- location. Localización de la página. Es lo que se nos muestra en la barra de dirección.
+
+			- name. Contiene el nombre de la ventana, o frame actual.
+
+			- opener. Se refiere al objeto window que lo abrió usando el método open().
+
+			- parent. Se refiere al objeto window que contiene el frameset.
+
+			- self. Nombre alternativo del window actual.
+
+			- status. Cadena con el mensaje que tiene la barra de estado.
+
+			- top. Nombre alternativo de la ventana del nivel superior.
+
+			- window. Nombre alternativo del objeto window actual.
+
+		MÉTODOS DEL OBJETO WINDOW
+
+			- alert(mensaje). Muestra el mensaje en un cuadro de diálogo
+
+			- blur(). Elimina el foco del objeto window actual.
+
+			- clearInterval(id). Elimina el intervalo referenciado por ‘id’ (ver el método setInterval(), 
+				también del objeto window).
+
+			- clearTimeout(nombre). Cancela el intervalo referenciado por ‘nombre’.
+
+			- close(). Cierra el objeto window actual.
+
+			- confirm(mensaje). Muestra un cuadro de diálogo con el mensaje ‘mensaje’ y dos botones, uno 
+			de aceptar y otro de cancelar. Devuelve true si se pulsa aceptar y false si se pulsa cancelar.
+
+			- focus(). Captura el foco del ratón sobre el objeto window actual.
+
+			- moveBy(x,y). Mueve el objeto window actual el número de pixels especificados por (x,y).
+
+			- moveTo(x,y). Mueve el objeto window actual a las coordenadas (x,y)
+			- open(URL,nombre,caracteristicas). Abre una ventana con el nombre que le especificamos y 
+			en ella la URL que
+			ponemos en el primer parámetro. Podemos indicar las características de esta ventana, las 
+			posibilidades que tenemos son las siguientes:
+
+			- toolbar. Si deseamos que la ventana tenga barra de herramientas o no. Puede ser yes/no ó 1/0.
+
+			- location. Si deseamos que la ventana tenga campo de localización o no. Puede ser yes/no ó 1/0.
+
+			- directories. Si deseamos que la ventana tenga botones de dirección o no. Puede ser yes/no ó 1/0.
+
+			- status. Si deseamos que la ventana tenga barra de estado o no. Puede ser yes/no ó 1/0.
+
+			- menubar. Si deseamos que la ventana tenga barra de menu o no. Puede ser yes/no ó 1/0.
+
+			- scrollbars. Si deseamos que la ventana tenga barras de desplazamiento o no. Puede ser yes/no ó 1/0.
+
+			- resizable. Si deseamos que la ventana pueda ser cambiada de tamaño o no. Puede ser yes/no ó 1/0.
+
+			- width. Ancho que queremos que tenga la ventana en pixels.
+
+			- Height. Alto que queremos que tenga la ventana en pixels.
+
+			-left. Distancia en pixels desde el lado izquierdo de la pantalla a la que queremos colocar la ventana.
+
+			- Top. Distancia en pixels desde el lado superior de la pantalla a la que queremos colocar la ventana.
+
+			- prompt(mensaje,valorInicial). Ya lo explicamos y lo hemos utilizado con frecuencia. Nos muestra un 
+			cuadro de diálogo con el mensaje especificado y nos permite introducir un valor. Este valor es 
+			guardado en una variable de tipo texto. El segundo parámetro es opcional y permite dar un valor 
+			inicial a dicha variable.
+
+			- scroll(x,y). Desplaza la ventana a las coordenada x, y.
+
+			- scrollBy(x,y). Desplaza la ventana los pixels especificados por (x,y).
+
+			- scrollTo(x,y). Desplaza la ventana a las coordenadas (x,y).
+
+			- setInterval(expresion,tiempo). Una vez transcurrido el tiempo especificado, se evalúa la expresión.
+			
+			- setTimeout(expresion,tiempo). Una vez transcurrido el tiempo especificado, se evalúa la expresión.
+
+		*/	
+	</script>
 </body>
 </html>
