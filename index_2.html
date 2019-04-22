@@ -1,10 +1,37 @@
-<!Doctype>[D html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="utf-8">
 	<title>DOM</title>
 </head>
-<body>
-	
+<body>	
+
+	<button onclick="miFuncion()">Probemos</button>
+
+	<footer id="pie">Esto se borrara</footer>
+	<script>
+		function miFuncion() {
+			alert("entra");
+			/*Crear un nodo tipo elemento*/
+			var miParrafo = document.createElement("p");
+
+			/*Creamos un texto tipo nodo, es decir el texto que vamos a añdir a un nodo*/
+			var miTexto = document.createTextNode("Esto es un ejemplo");
+
+			/*Añadir el nodo texto como hijo del nodo elemento:*/
+			miParrafo.appendChild(miTexto);
+
+			//Añadir el nodo elemento como hijo del nodo elemento:
+			document.body.appendChild(miParrafo);
+
+			/*Para borrar un nodo existente: es menos complicado que añadirlo. 
+			Supongamos que deseamos borrar el nodo cuyo id es “pie”:*/
+			var miPieDePagina = document.getElementById("pie");
+			miPieDePagina.parentNode.removeChild(miPieDePagina);
+			/*Cuando eliminamos un nodo, también eliminamos los hijos que dependan de él, si los tiene*/
+
+		}
+
+	</script>
 </body>
 </html>
