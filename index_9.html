@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Objeto Formulario</title>
+</head>
+<body>
+	<script>
+		/*
+			Se refiere al formulario definido en HTML y contiene todos los elementos de dicho formulario. 
+			Todos los formularios de un documento están agrupados en un array. Para hacer referencia a un 
+			formulario de un documento podemos hacerlo de dos maneras: por el nombre que le asignamos
+			al crearlo en HTML (atributo NAME) o por medio de su índice correspondiente en el array de 
+			formularios del documento.Una de las utilidades más frecuentes del trabajo con formularios 
+			será la comprobación de los datos introducidos en él por parte del usuario antes de que sean enviados.
+
+			Propiedades
+				- Action. Se trata de la acción que se debe realizar cuando se envíe el formulario. Contiene 
+				la URL o correo en  que se procesarán los datos del formulario. Se corresponde con el 
+				parámetro ACTION de HTML.
+
+				- elements. Array que contendrá los elementos que componen el formulario. Asigna a dichos 
+				elementos un número en el mismo orden en el que se definen, siendo el primer elemento el 0.
+				- encoding. Contiene el tipo de codificación del formulario. Corresponde al parámetro ENCTYPE de HTML.
+				- method. Contiene el método con el que se va a recibir/procesar la información del formulario correspondiente al atributo METHOD (GET/POST) de HTML.
+
+			Métodos
+				- reset(). Reinicializa todas los campos del formulario. Es el mismo efecto que si pulsamos un 
+				botón RESET de HTML.
+				- submit(). Envía el formulario. Aunque no se pulse, el efecto es el mismo que si pulsáramos 
+				un botón de tipo SUBMIT de HTML.
+
+
+				EL OBJETO CUADRO DE TEXTO.
+
+				Propiedades
+				- defaultValue. Contiene el valor por defecto que se le ha dado al objeto texto. Equivale al
+				atributo VALUE del INPUT de HTML.
+
+				- name. Cadena cuyo contenido es el valor del parámetro NAME de HTML.
+
+				- value. Cadena cuyo contenido es el texto escrito en el campo.
+
+				- maxlength. Número máximo de caracteres que puede llegar a contener el campo de texto.
+
+
+				Métodos
+
+				- blur(). Se produce cuando el texto pierde el foco.
+
+				- focus(). Se produce al situar el foco sobre el objeto.
+
+				- select(). Se produce al seleccionar el texto del objeto.
+
+
+				EL Objeto Chekbox 
+
+				Propiedades
+				- checked. Valor tipo booleano. Nos informa sobre el estado del checkbox, será cierto si está pulsado.
+				
+				- defaultChecked. Establece el valor por defecto del checkbox.
+				
+				- name. Cadena que contiene el valor del parámetro NAME.
+				
+				- value. Cadena que contiene el valor actual del checkbox..
+				
+
+				Métodos
+				- Click(). Es como si hiciéramos click sobre el checkbox, cambiando su estado.
+
+
+				EL OBJETO RADIOBUTTON
+				Propiedades
+				- Checked: Indica si está seleccionado o no, es un valor booleano.
+				
+				- DefaultChecked : Nos devuelve el estado del objeto por defecto.
+				
+				- Value : El valor del campo de radio, asignado por la propiedad value del radio.
+				
+				- Length : Es el número de objetos radio que forman parte en el grupo.
+				
+				Métodos
+				- Click(). Es como si hiciéramos click sobre el checkbox, cambiando su estado.
+		*/
+
+		function nota(examen){
+			var resultado=0;
+			for(i=0;i<examen.elements.length;i++){
+				if ((examen.elements[i].type=="radio") &&
+					(examen.elements[i].value=="bien") &&
+					(examen.elements[i].checked))
+					resultado++;
+			}
+			alert("Acertaste " + resultado + " de 2 preguntas");
+			return false;
+		}
+
+		/*
+			El Objeto button
+
+			Propiedades
+			- name. Es una cadena que contiene el valor del parámetro NAME.
+			
+			- value. Es una cadena que contiene el valor del parámetro VALUE.
+				-
+			Métodos
+			
+			- click(). Realiza la acción de pulsado del botón.
+
+		*/
+	</script>
+
+	<form name="miFormulario" onSubmit="nota(this)">
+		<br>El cielo es de color...
+		<br><input type="radio" name="respuesta1" value="mal">Rosa
+		<br><input type="radio" name="respuesta1" value="bien">Azul
+		<br><input type="radio" name="respuesta1" value="mal">Verde
+		<br>El animal que nos da leche es...
+		<br><input type="radio" name="respuesta2" value="mal">La abeja
+		<br><input type="radio" name="respuesta2" value="mal">La gallina
+		<br><input type="radio" name="respuesta2" value="bien">La vaca
+		<br><input type="submit" value="Dime mi nota">
+	</form>
+</body>
+</html>
