@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Objeto tipos de Datos</title>
+</head>
+<body>
+	<script>
+		/*El Objeto String*/
+
+		/*
+			length. Entero que nos devuelve la longitud en caracteres de la cadena..
+			- prototype. Nos permite asignar nuevas propiedades al objeto String.
+			
+			- Métodos
+			
+			- anchor(nombre). Crea un enlace con el nombre recibido como parámetro. Nombre deberá ir entrecomillado.
+			
+			- big(). Muestra la cadena en una letra más grande.
+			
+			- blink(). Muestra la cadena con un efecto parpadeante..
+			
+			- charAt(número). Muestra el carácter que ocupa la posición dentro de la cadena especificado por número..
+			
+			- fixed(). Muestra la cadena de caracteres con una fuente monoespaciada.
+			
+			- fontcolor(color). Muestra la cadena en el color especificado que se pondrá entrecomillado. 
+				Puede ponerse el color en inglés: “red”, “blue”, “yellow”, etc. o siguiendo el formato 
+				habitual de: “#RRGGBB” en hexadecimal.
+			
+			- fontsize(tamaño). Muestra la cadena al tamaño indicado. El más pequeño es 1 y el mayor 7.
+			
+			- indexOf(cadenaBuscada, indice) Devuelve la posición de la primera ocurrencia de la cadena 
+				buscada en la actual. Realiza la búsqueda desde el número especificado por indice. En el caso 
+				de omitirse el parámetro inicio, comenzará en el primer carácter. Si la búsqueda no tiene éxito, 
+				entonces devuelve el valor -1.
+			
+			- italics(). Muestra la cadena en cursiva.
+			
+			- lastIndexOf(cadenaBuscada,indice). Devuelve la posición de la última ocurrencia de la cadena 
+				buscada dentro de la actual. Se busca desde indice, pero esta búsqueda se realiza hacia atrás. 
+				En el caso de omitirse, la búsqueda se realiza desde el último carácter.
+			
+			-link(URL). Convierte la cadena en un vínculo asignando al atributo HREF el valor de URL.
+			
+			- small(). Muestra la cadena con una fuente pequeña.
+			
+			- split(separador). Parte la cadena en un array de caracteres. Si el carácter separador no se 
+				encuentra, devuelve un array con un sólo elemento que coincide con la cadena original.
+			
+			- strike(). Muestra la cadena de caracteres tachada.
+			
+			- sub(). Muestra la cadena con formato de subíndice.
+			
+			- substring(primer_Indice,segundo_Indice). Devuelve la subcadena que comienza en la posición 
+				‘primer_Indice + 1’ y que finaliza en la posición ‘segundo_Indice’. Si ‘primer_Indice’ es mayor 
+				que ‘segundo_Indice’, empieza por ‘segundo_Indice + 1’ y termina en ‘primer_Indice’. Si hacemos 
+				las cuentas a partir de 0, entonces es la cadena que comienza en ‘primer_Indice’ y termina en 
+				‘segundo_Indice - 1’ (o bien ‘segundo_Indice’ y	‘primer_Indice - 1’ si el primero es mayor que el segundo).
+			
+			- sup(). Muestra la cadena con formato de superíndice.
+			
+			- toLowerCase(). Devuelve la cadena en minúsculas.
+			
+			- toUpperCase(). Devuelve la cadena en minúsculas.
+		*/
+
+		var miCadena =prompt("Introduzca un texto: ");
+		var palabras = new Array(); 
+		var palabras = miCadena.split(" ");
+		function escribir() {
+			with(document){
+			write("La cadena es: " + miCadena + "<BR>");
+			write("El número de caracteres de la cadena es: " + miCadena.length + "<BR>");
+			write("Haciéndola ancla: " + miCadena.anchor("#") + "<BR>");
+			write("En grande: " + miCadena.big() + "<BR>");
+			write("Parpadeante: " + miCadena.blink() + "<BR>");
+			write("Caracter 4 es: " + miCadena.charAt(3) + "<BR>");
+			write("Fuente FIXED: " + miCadena.fixed() + "<BR>");
+			write("De color rojo: " + miCadena.fontcolor("#FF0000") + "<BR>");
+			write("De color verde: " + miCadena.fontcolor("green") + "<BR>");
+			write("Fuente Tamaño 7: " + miCadena.fontsize(7) + "<BR>");
+			write("<BR>En cursiva: " + miCadena.italics() + "<BR>");
+			write("La primera <I>a</I> está, empezando a contar por detrás,");
+			write(" en la posición: " + miCadena.lastIndexOf("a") + "<BR>");
+			write("Haciéndola enlace: " + miCadena.link("#") + "<BR>");
+			write("En pequeño: " + miCadena.small() + "<BR>");
+			write("Tachada: " + miCadena.strike() + "<BR>");
+			write("Subíndice: " + miCadena.sub() + "<BR>");
+			write("Superíndice: " + miCadena.sup() + "<BR>");
+			write("Minúsculas: " + miCadena.toLowerCase() + "<BR>");
+			write("Mayúsculas: " + miCadena.toUpperCase() + "<BR>");
+			write("Subcadena entre los caracteres 4 y 6: ");
+			write(miCadena.substring(3, 6) + "<BR>");
+			write("Entre los caracteres 6 y 4: " + miCadena.substring(6,3) + "<BR>");
+			write("Subcadenas resultantes de separar en palabras:</B><BR>");
+
+			for(i=0;i<palabras.length;i++) 
+				write(palabras[i] + "<BR>");
+			}	
+		}
+		
+		
+	</script>
+
+	<input type="button" value="Muestrame" onclick="escribir()">
+</body>
+</html>
