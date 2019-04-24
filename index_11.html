@@ -56,7 +56,119 @@
 					Posicion puede ser un entero, en cuyo caso indica la posición relativa del documento dentro 
 					del historial; o puede ser una cadena de caracteres, en cuyo caso representa toda o parte 
 					de una URL que esté en el historial.
+		*/
 
+
+		/*
+
+			EL OBJETO LOCATION. PROPIEDADES Y MÉTODOS DE LOCATION
+			Este objeto contiene la URL actual así como algunos datos de interés respecto a esta URL. 
+			Su finalidad principal es, por una parte, modificar el objeto location para cambiar a una 
+			nueva URL, y extraer los componentes de dicha URL de forma separada para poder trabajar 
+			con ellos de forma individual si es el caso. Recordemos que la sintaxis de una URL era:
+			protocolo://maquina_host[:puerto]/camino_al_recurso.
+
+			Propiedades
+				
+				- hash. Cadena que contiene el nombre del enlace, dentro de la URL.
+				
+				- host. Cadena que contiene el nombre del servidor y el número del puerto, dentro de la URL.
+				
+				- hostname. Cadena que contiene el nombre de dominio del servidor (o la dirección IP), dentro de la URL.
+				
+				- href. Cadena que contiene la URL completa.
+				
+				- pathname. Cadena que contiene el camino al recurso, dentro de la URL.
+				
+				- port. Cadena que contiene el número de puerto del servidor, dentro de la URL.
+				
+				- protocol. Cadena que contiene el protocolo utilizado (incluyendo los dos puntos), dentro de la URL.
+				
+				- search. Cadena que contiene la información pasada en una llamada a un script, dentro de la URL.
+			Métodos
+				- reload(). Vuelve a cargar la URL especificada en la propiedad href del objeto location.
+				
+				- replace(cadenaURL). Reemplaza el historial actual mientras carga la URL especificada en cadenaURL.
+
+		*/
+
+		/*
+
+			EL OBJETO FRAME. PROPIEDADES Y MÉTODOS DE FRAME
+			Todos sabemos que la ventana del navegador puede ser dividida en varios frames que contengan cada
+			 uno de ellos un documento en el que mostrar contenidos diferentes. Al igual que con las ventanas, 
+			 cada uno de estos frames puede ser nombrado y referenciado, lo que nos permite cargar documentos 
+			 en un marco sin que esto afecte al resto.
+			Realmente cada frame se representa con un objeto window, esto quiere decir que el objeto frame 
+			tiene todas las propiedades y métodos del objeto window.
+
+
+			Propiedades
+				- closed. Válida a partir de Netscape 3 en adelante y MSIE 4 en adelante. Es un booleano que 
+				nos dice si la ventana está cerrada ( closed = true ) o no ( closed = false ).
+				
+				- defaultStatus. Cadena que contiene el texto por defecto que aparece en la barra de estado 
+				(status bar) del navegador.
+				
+				- frames. Es un array: cada elemento de este array (frames[0], frames[1], ...) es uno de los 
+				frames que contiene la ventana. Su orden se asigna según se definen en el documento HTML.
+				
+				- history. Se trata de un array que representa las URLS visitadas por la ventana (están almacenadas en su
+				historial).
+				
+				- length. Variable que nos indica cuántos frames tiene la ventana actual.
+				
+				- location. Cadena con la URL de la barra de dirección.
+				
+				- name. Contiene el nombre de la ventana, o del frame actual.
+				
+				- opener. Es una referencia al objeto window que lo abrió, si la ventana fue abierta usando el 
+				método open() que veremos cuando estudiemos los métodos.
+				
+				- parent. Referencia al objeto window que contiene el frameset.
+				
+				- self. Es un nombre alternativo del window actual.
+				
+				- status. String con el mensaje que tiene la barra de estado.
+				
+				- top. Nombre alternativo de la ventana del nivel superior.
+				
+				- window. Igual que self: nombre alternativo del objeto window actual.
+
+
+				Métodos
+					- alert(mensaje). Muestra el mensaje ‘mensaje’ en un cuadro de diálogo
+					
+					- blur(). Elimina el foco del objeto window actual.
+					
+					- clearInterval(id). Elimina el intervalo referenciado por ‘id’ (ver el método setInterval(), 
+					también del objeto window).
+					
+					- clearTimeout(nombre). Cancela el intervalo referenciado por ‘nombre’ (ver el método setTimeout(), 
+					también del objeto window).
+					
+					- confirm(mensaje). Muestra un cuadro de diálogo con el mensaje ‘mensaje’ y dos botones, uno de 
+					aceptar y otro de cancelar. Devuelve true si se pulsa aceptar y devuelve false si se pulsa cancelar.
+					
+					- focus(). Captura el foco del ratón sobre el objeto window actual.
+					
+					- open(URL,nombre,caracteristicas). Abre la URL que le pasemos como primer parámetro en una ventana de
+					nombre ‘nombre’. Si esta ventana no existe, abrirá una ventana nueva en la que mostrará el contenido con las características especificadas. Las características que podemos elegir para la ventana que queramos abrir son las siguientes:
+					
+					- prompt(mensaje,respuesta_por_defecto). Muestra un cuadro de diálogo que contiene una caja de texto en la cual podremos escribir una respuesta a lo que nos pregunte en ‘mensaje’. El parámetro
+					‘respuesta_por_defecto’ es opcional, y mostrará la respuesta por defecto indicada al abrirse el cuadro de diálogo. El método retorna una cadena de caracteres con la respuesta introducida.
+					
+					- scroll(x,y). Desplaza el objeto window actual a las coordenadas especificadas por (x,y).
+					
+					- scrollBy(x,y). Desplaza el objeto window actual el número de pixels especificado por (x,y).
+					
+					- scrollTo(x,y). Desplaza el objeto window actual a las coordenadas especificadas por (x,y).
+					
+					- setInterval(expresion,tiempo). Evalúa la expresión especificada después de que hayan pasado 
+					el número de milisegundos especificados en tiempo. Devuelve un valor que puede ser usado como identificativo por clearInterval().
+					
+					- setTimeout(expresion,tiempo). Evalúa la expresión especificada después de que hayan pasado 
+					el número de milisegundos especificados en tiempo. Devuelve un valor que puede ser usado como identificativo por clearTimeout().
 
 		*/
 	</script>
