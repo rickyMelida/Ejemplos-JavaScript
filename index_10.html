@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Select</title>
+</head>
+<body>	
+	<script>
+		
+		/*
+			EL OBJETO SELECT
+
+			Propiedades
+				- length. Entero que especifica cuántas opciones tiene la lista. Es igual a la 
+				cantidad de etiquetas <OPTION> que pongamos.
+				- name. Cadena de texto que contiene el valor del parámetro NAME.
+				- options. Array que contiene cada una de las opciones de la lista. A su vez options tiene las siguientes
+				propiedades:
+				- defaultSelected. Booleano que indica si la opción está seleccionada por defecto.
+				- index. Entero con la posición de la opción dentro del array.
+				- length. Entero con el número de opciones del array.
+				- options. Cadena con código HTML del array.
+				- selected. Booleano que indica si la opción está seleccionada o no.
+				- text. Cadena que contiene el texto mostrado en la lista de una opción concreta.
+				- value. C adena que contiene el valor del parámetro VALUE de la opción.
+				- selectedIndex. Entero que nos indica cuál de todas las opciones disponibles se encuentra actualmente
+				seleccionada.
+
+
+
+			
+		*/
+
+		function irA(menu){
+			window.location.href = menu.options[menu.selectedIndex].value;
+		}
+	</script>
+
+	<form name="miFormulario">
+		<select name="menu" size=1 onChange="irA(this)">
+			<option value="">Visitar
+			<option value="http://www.yahoo.es">Yahoo
+			<option value="http://www.google.es">Google
+			<option value="http://www.20minutos.es">20 minutos
+		</select>
+	</form>
+</body>
+</html>
