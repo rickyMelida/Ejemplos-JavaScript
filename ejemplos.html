@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ejemplos</title>
+	<style>
+		p:first-letter { text-transform: uppercase; }
+
+		div {
+			font: bold 21px Cambria;
+		}
+	</style>
+</head>
+<body>
+	<h1>Ejemplos Varios</h1>
+
+	<div>primero
+		<p class="pa">segundo</p>
+		<p>Tercero</p>
+	</div>
+
+	<input type="button" value="Crealo" onclick="crea()">
+	<input type="button" value="Borralo" onclick="borra()">
+	<script>
+
+
+		function crea() {
+			var primero = document.createElement("div");
+
+			var texto = document.createTextNode("Humana");
+
+			primero.appendChild(texto);
+
+			document.body.appendChild(primero);
+		}
+
+
+
+		function borra() {
+			var primero = document.getElementsByTagName("div")[0];
+			var p_1 = document.getElementsByTagName("p")[0];
+			var p_2 = document.getElementsByTagName("p")[1];
+				
+			var btn_1 = document.getElementsByTagName("input")[0];
+			var btn_2 = document.getElementsByTagName("input")[1];	
+
+			primero.parentNode.removeChild(primero);
+			btn_1.parentNode.removeChild(btn_1);
+			btn_2.parentNode.removeChild(btn_2);
+
+			botones();
+		}
+
+
+		function botones() {
+			var crealo = document.createElement("input");
+			crealo.type = "button";
+			crealo.value = "Crealo";
+			crealo.id = 'crea';
+
+
+			var borralo = document.createElement("input");
+			borralo.type = "button";
+			borralo.value = "Borralo";
+			borralo.id = 'borra';
+
+			document.body.appendChild(crealo);
+			document.body.appendChild(borralo); 
+
+		}
+
+
+		var btn_crea = document.getElementById("crea");
+		var btn_borra = document.getElementById("borra");
+
+		btn_borra.addEventListener('click', function() {
+			this.style.color = "red";
+		});
+
+		btn_crea.addEventListener('click', crea());
+	</script>
+</body>
+</html>
