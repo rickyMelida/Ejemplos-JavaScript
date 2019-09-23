@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validar Hora</title>
+</head>
+<body>
+    <h1>Validar hora</h1>
+    <form action="">
+        <label for="">Hora inicial: </label>
+        <input type="text" name="" id="hora_i"> <br><br>
+        <label for="">Hora Final:  </label>
+        <input type="text" name="" id="hora_f"> <br><br>
+        <label for="">Horas H. :</label> 
+        <input type="text" name="" id="hora_h" disabled> <br>
+        <input type="submit" value="Enviar" id="btn">
+    </form>
+
+    <p id="texto">
+
+    </p>
+    <script>
+
+        var res = document.getElementById('texto');
+        var boton = document.getElementById('btn');
+        var seg = document.getElementById('hora_f');
+
+        seg.addEventListener('blur', function() {
+            var valida_h1 = new Array();
+            var valida_h2 = new Array();
+
+            var hora_i = document.getElementById('hora_i').value;
+            var hora_f = document.getElementById('hora_f').value;
+
+            valida_h1 = validar(hora_i);
+            valida_h2 = validar(hora_f);
+
+            var hora_h = valida_h2[0] - valida_h1[0]; 
+            var min_h = valida_h2[1] - valida_h1[1];
+
+            if(hora_h < 0)  {
+                hora_h = hora_h * (-1);
+            }
+
+            if(min_h < 0)  {
+                min_h = min_h * (-1);
+            }
+
+            if(validar(hora_i) == false || validar(hora_f) == false){
+                alert('Algo anda mal!');
+            }else{
+                document.getElementById('hora_h').value = hora_h + ":" + min_h;
+            }
+        });
+
+        
+        function validar(hora) {
+            var horario = new Array();
+
+            var horas = hora.substr(0, 2);
+            var minuto = hora.substr(3,5);
+            var puntos = hora.substr(2, 1);
+
+            if(!isNaN(horas) && hora.length == 5 && puntos == ':' && horas <= 23 && minuto <= 59) {
+                horario[0] = horas;
+                horario[1] = minuto;
+    
+                return horario;
+
+            }else {
+                return false;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
