@@ -19,7 +19,7 @@
     </form>
 
     <p id="texto">
-
+        a
     </p>
     <script>
 
@@ -51,14 +51,20 @@
 
             //Condicionamos si el horario inicial es mayor que el final
             if(hora_f < hora_i) {
-                hora_h = (24 - parseInt(hora_i)) + parseInt(hora_f);
+                //hora_h = (24 - parseInt(hora_i)) + parseInt(hora_f);
+                hora_h = ((24 - parseInt(hora_i)) + parseInt(hora_f)) - 1;
+                document.getElementById('texto').innerHTML = "Sale: " + hora_h;
 
                 if(valida_h2[1] < valida_h1[1]) {
                     hora_h = ((24 - parseInt(hora_i)) + parseInt(hora_f)) - 1;
                 }
-                document.getElementById('texto').innerHTML = "Sale: " + hora_h;
             }
 
+            if(valida_h2[1] < valida_h1[1]) {
+                hora_h = ((parseInt(hora_f)) - parseInt(hora_i)) - 1;
+            }
+
+            
             if(validar(hora_i) == false || validar(hora_f) == false){
                 alert('Algo anda mal!');
             }else{
