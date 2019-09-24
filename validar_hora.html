@@ -39,6 +39,8 @@
             var hora_h = valida_h2[0] - valida_h1[0]; 
             var min_h = valida_h2[1] - valida_h1[1];
 
+
+            /*------------------------------------------------------------*/
             //Validamos la hora para que no de negativo
             if(hora_h < 0)  {
                 hora_h = hora_h * (-1);
@@ -49,6 +51,8 @@
                 min_h = min_h * (-1);
             }
 
+
+            /*---------------------------------------------------------*/
             //Condicionamos si el horario inicial es mayor que el final
             if(hora_f < hora_i) {
                 //hora_h = (24 - parseInt(hora_i)) + parseInt(hora_f);
@@ -60,6 +64,7 @@
                 }
             }
 
+            /*-----------------------------------------------------------*/
             if(valida_h2[1] < valida_h1[1]) {
                 hora_h = ((parseInt(hora_f)) - parseInt(hora_i)) - 1;
             }
