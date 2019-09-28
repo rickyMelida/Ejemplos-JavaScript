@@ -13,7 +13,7 @@
         <input type="text" name="" id="hora_i"> <br><br>
         <label for="">Hora Final:  </label>
         <input type="text" name="" id="hora_f"> <br><br>
-        <label for="">Horas H. :</label> 
+        <label for="">Horas H. :</label>
         <input type="text" name="" id="hora_h" disabled> <br>
         <input type="submit" value="Enviar" id="btn">
     </form>
@@ -36,7 +36,7 @@
             valida_h1 = validar(hora_i);
             valida_h2 = validar(hora_f);
 
-            var hora_h = valida_h2[0] - valida_h1[0]; 
+            var hora_h = valida_h2[0] - valida_h1[0];
             var min_h = valida_h2[1] - valida_h1[1];
 
 
@@ -55,21 +55,18 @@
             /*---------------------------------------------------------*/
             //Condicionamos si el horario inicial es mayor que el final
             if(hora_f < hora_i) {
-                //hora_h = (24 - parseInt(hora_i)) + parseInt(hora_f);
-                hora_h = ((24 - parseInt(hora_i)) + parseInt(hora_f)) - 1;
+                hora_h = ( (24 + parseInt(hora_f)) - parseInt(hora_i) );
                 document.getElementById('texto').innerHTML = "Sale: " + hora_h;
 
-                if(valida_h2[1] < valida_h1[1]) {
-                    hora_h = ((24 - parseInt(hora_i)) + parseInt(hora_f)) - 1;
+                if (valida_h2[1] < valida_h1[1]) {
+                  hora_h = ( (24 + parseInt(hora_f)) - parseInt(hora_i) ) - 1;
+                  min_h = ((parseInt(valida_h2[1]) + 60) - (valida_h1[1]));
+
                 }
             }
 
-            /*-----------------------------------------------------------*/
-            if(valida_h2[1] < valida_h1[1]) {
-                hora_h = ((parseInt(hora_f)) - parseInt(hora_i)) - 1;
-            }
-
             
+
             if(validar(hora_i) == false || validar(hora_f) == false){
                 alert('Algo anda mal!');
             }else{
@@ -77,7 +74,8 @@
             }
         });
 
-        
+
+        ///Funcion para validar hora
         function validar(hora) {
             var horario = new Array();
 
@@ -88,7 +86,7 @@
             if(!isNaN(horas) && hora.length == 5 && puntos == ':' && horas <= 23 && minuto <= 59) {
                 horario[0] = horas;
                 horario[1] = minuto;
-    
+
                 return horario;
 
             }else {
